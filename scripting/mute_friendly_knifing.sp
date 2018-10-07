@@ -42,7 +42,7 @@ stock bool IsEntityKnife(int i_entity)
 {
     char s_classname[255];
     GetEntityClassname(i_entity, s_classname, sizeof(s_classname));
-    return 	StrContains(s_classname, "knife") != -1 || 
+    return  StrContains(s_classname, "knife") != -1 || 
             StrContains(s_classname, "bayonet") > -1;
 }
 
@@ -99,7 +99,7 @@ public Action Hook_NormalSound( int i_clients[MAXPLAYERS],
     {
         // A ``Hook_NormalSound`` call from a different emmiter slipped in between
         // the expected ``Hook_TraceAttack`` -> ``Hook_NormalSound`` flow
-        ThrowError(	"Attack and hit sound callbacks desynchronized. " ...
+        ThrowError( "Attack and hit sound callbacks desynchronized. " ...
                     "This is not how this plugin is supposed to work!");
         return Plugin_Continue;
     }
