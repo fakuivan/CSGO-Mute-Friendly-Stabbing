@@ -65,6 +65,7 @@ public Action Hook_TraceAttack(int i_victim,
 	{
 		gi_mute_payload[i_attacker][LAI_Mute] = true;
 		gi_mute_payload[i_attacker][LAI_Inflictor] = i_weapon;
+		return Plugin_Continue;
 	}
 	gi_mute_payload[i_attacker][LAI_Mute] = false;
 	return Plugin_Continue;
