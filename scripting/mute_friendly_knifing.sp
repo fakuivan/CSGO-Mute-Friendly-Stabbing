@@ -19,13 +19,13 @@ public void OnPluginStart()
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if(!IsClientInGame(i)) { continue; }
-		SDKHook(i, SDKHook_TraceAttackPost, TraceHook);
+		SDKHook(i, SDKHook_TraceAttack, TraceHook);
 	}
 }
 
 public void OnClientPutInServer(int client)
 {
-	SDKHook(client, SDKHook_TraceAttackPost, TraceHook);
+	SDKHook(client, SDKHook_TraceAttack, TraceHook);
 }
 
 public Action TraceHook(int victim, int &attacker, int &inflictor, float &damage, int &damagetype, int &ammotype, int hitbox, int hitgroup)
